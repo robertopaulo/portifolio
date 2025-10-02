@@ -84,36 +84,36 @@ async def get_services():
     services = [
         {
             "id": "1",
-            "title": "Air Conditioner Installation & Maintenance",
-            "description": "Professional installation, repair and maintenance of air conditioning systems",
+            "title": "Instalação & Manutenção de Ar Condicionado",
+            "description": "Instalação profissional, reparo e manutenção de sistemas de ar condicionado",
             "icon": "❄",
             "active": True
         },
         {
             "id": "2",
-            "title": "Refrigerator and Freezer Repair",
-            "description": "Expert repair services for refrigerators, freezers and cooling appliances",
+            "title": "Reparo de Geladeira e Freezer",
+            "description": "Serviços especializados em reparo de geladeiras, freezers e eletrodomésticos de refrigeração",
             "icon": "🧊",
             "active": True
         },
         {
             "id": "3",
-            "title": "Electronic Repairs",
-            "description": "Comprehensive repair services for various electronic devices and appliances",
+            "title": "Reparos Eletrônicos",
+            "description": "Serviços completos de reparo para diversos dispositivos e aparelhos eletrônicos",
             "icon": "⚡",
             "active": True
         },
         {
             "id": "4",
-            "title": "Electric Gate Installation",
-            "description": "Professional installation and maintenance of electric gates and access systems",
+            "title": "Instalação de Portão Elétrico",
+            "description": "Instalação profissional e manutenção de portões elétricos e sistemas de acesso",
             "icon": "🚪",
             "active": True
         },
         {
             "id": "5",
-            "title": "General Electrical Services",
-            "description": "Complete electrical services for homes and businesses",
+            "title": "Serviços Elétricos Gerais",
+            "description": "Serviços elétricos completos para residências e empresas",
             "icon": "🔧",
             "active": True
         }
