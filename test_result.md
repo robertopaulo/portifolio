@@ -84,15 +84,10 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Health Check API"
-    - "Services API"
-    - "Testimonials GET API"
-    - "Contact Form POST API"
-    - "Testimonials POST API"
+  current_focus: []
   stuck_tasks: []
-  test_all: true
-  test_priority: "high_first"
+  test_all: false
+  test_priority: "completed"
 
 agent_communication:
   - agent: "testing"
