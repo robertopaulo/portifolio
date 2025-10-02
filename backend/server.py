@@ -124,32 +124,61 @@ async def get_services():
 async def get_testimonials():
     try:
         testimonials = await db.testimonials.find({"approved": True}).to_list(length=100)
+        
+        # If no testimonials in database, return sample testimonials
+        if not testimonials:
+            return [
+                {
+                    "id": "1",
+                    "name": "Maria Silva",
+                    "rating": 5,
+                    "comment": "Excelente serviço! Sr. Sigmar consertou meu ar condicionado rapidamente e profissionalmente.",
+                    "service": "Reparo de Ar Condicionado"
+                },
+                {
+                    "id": "2",
+                    "name": "João Santos", 
+                    "rating": 5,
+                    "comment": "Técnico muito confiável. Meu portão elétrico está funcionando perfeitamente desde a instalação.",
+                    "service": "Instalação de Portão Elétrico"
+                },
+                {
+                    "id": "3",
+                    "name": "Ana Costa",
+                    "rating": 5,
+                    "comment": "Resposta rápida e preços justos. Recomendo muito os serviços do Sr. Sigmar!",
+                    "service": "Reparos Eletrônicos"
+                }
+            ]
+        
+        # Convert MongoDB ObjectIds to strings
         for testimonial in testimonials:
             testimonial["_id"] = str(testimonial["_id"])
         return testimonials
+        
     except Exception as e:
-        # Return sample testimonials if database is not available
+        # Return sample testimonials if database connection fails
         return [
             {
                 "id": "1",
                 "name": "Maria Silva",
                 "rating": 5,
-                "comment": "Excellent service! Mr. Sigmar fixed my air conditioner quickly and professionally.",
-                "service": "Air Conditioner Repair"
+                "comment": "Excelente serviço! Sr. Sigmar consertou meu ar condicionado rapidamente e profissionalmente.",
+                "service": "Reparo de Ar Condicionado"
             },
             {
                 "id": "2",
                 "name": "João Santos",
                 "rating": 5,
-                "comment": "Very reliable technician. My electric gate has been working perfectly since the installation.",
-                "service": "Electric Gate Installation"
+                "comment": "Técnico muito confiável. Meu portão elétrico está funcionando perfeitamente desde a instalação.",
+                "service": "Instalação de Portão Elétrico"
             },
             {
                 "id": "3",
                 "name": "Ana Costa",
                 "rating": 5,
-                "comment": "Fast response and fair prices. Highly recommend Mr. Sigmar's services!",
-                "service": "Electronic Repairs"
+                "comment": "Resposta rápida e preços justos. Recomendo muito os serviços do Sr. Sigmar!",
+                "service": "Reparos Eletrônicos"
             }
         ]
 
